@@ -5,7 +5,7 @@ import { usePresetsStore } from "../../store/presetsStore";
 import InstallationInstanceModal from "../installations/InstallationInstanceModal";
 import { useState, useMemo } from "react";
 
-export default function PresetsTab() {
+export 預設 function PresetsTab() {
   const { t } = useTranslation();
   const { presets, installations } = useAppStore();
   const [searchQuery, setSearchQuery] = useState("");
@@ -37,7 +37,7 @@ export default function PresetsTab() {
   const filteredPresets = useMemo(() => {
     let filtered = presets;
 
-    // Apply search filter
+    // 套用 search filter
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
       filtered = filtered.filter(
@@ -49,14 +49,14 @@ export default function PresetsTab() {
       );
     }
 
-    // Apply version filter
+    // 套用 版本 filter
     if (selectedFilter !== "all") {
       filtered = filtered.filter((preset) => {
-        // Extract BetterRTX version from preset name
+        // Extract BetterRTX 版本 from preset name
         const versionMatch = preset.name.match(/BetterRTX\s+(\d+\.\d+(?:\.\d+)?)/i);
         
         if (selectedFilter === "other") {
-          // Show presets that don't have a BetterRTX version pattern
+          // Show presets that don't have a BetterRTX 版本 pattern
           return !versionMatch;
         }
         
@@ -66,7 +66,7 @@ export default function PresetsTab() {
         
         const presetVersion = versionMatch[1];
         
-        // Match major.minor version (e.g., "1.4" matches "1.4.0", "1.4.1", etc.)
+        // Match major.minor 版本 (e.g., "1.4" matches "1.4.0", "1.4.1", etc.)
         return presetVersion.startsWith(selectedFilter);
       });
     }
@@ -78,8 +78,8 @@ export default function PresetsTab() {
     <section className="presets-container">
       <div className="section-toolbar flex justify-between items-center mb-4">
         <div className="toolbar-title">
-          <h2 className="text-lg font-semibold select-none cursor-default">{t("presets_title")}</h2>
-          <span className="text-sm opacity-75 select-none cursor-default">
+          <h2 className="text-lg font-semibold 選擇-none cursor-預設">{t("presets_title")}</h2>
+          <span className="text-sm opacity-75 選擇-none cursor-預設">
             {t("presets_loaded_count", { count: filteredPresets.length })} /{" "}
             {presets.length}
           </span>
@@ -96,17 +96,17 @@ export default function PresetsTab() {
           />
         </div>
         <div className="filter-dropdown">
-          <select
+          <選擇
             value={selectedFilter}
             onChange={(e) => setSelectedFilter(e.target.value)}
             className="px-3 py-2 bg-app-panel border border-app-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent cursor-pointer"
           >
-            <option disabled value="">{t("filter_select", "Select a version")}</option>
-            <option value="all">{t("filter_any_version", "Any Version")}</option>
+            <option disabled value="">{t("filter_select", "選擇 a 版本")}</option>
+            <option value="all">{t("filter_any_version", "Any 版本")}</option>
             <option value="1.4">{t("filter_v14", "BetterRTX 1.4")}</option>
             <option value="1.3">{t("filter_v13", "BetterRTX 1.3")}</option>
             <option value="1.2">{t("filter_v12", "BetterRTX 1.2")}</option>
-          </select>
+          </選擇>
         </div>
       </div>
       <div className="presets-list">

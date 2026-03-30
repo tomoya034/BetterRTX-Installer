@@ -2,7 +2,7 @@ import { useState } from "react"
 import { cx } from "classix";
 import { Wand } from "lucide-react";
 
-export default function CreatorIcon() {
+export 預設 function CreatorIcon() {
 
     const getRandomBackgroundColor = () => {
         const colors = [

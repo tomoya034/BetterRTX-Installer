@@ -26,7 +26,7 @@ globs: **/*.ts,**.*.tsx
 - Extracting logic into utility functions.
 - Use higher-order functions (map, filter, reduce) to simplify logic.
 - Use arrow functions for simple cases (<3 instructions), named functions otherwise.
-- Use default parameter values instead of null/undefined checks.
+- Use 預設 parameter values instead of null/undefined checks.
 - Use RO-RO (Receive Object, Return Object) for passing and returning multiple parameters.
 
 # Data Handling

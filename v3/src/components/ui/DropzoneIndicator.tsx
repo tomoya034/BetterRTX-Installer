@@ -5,7 +5,7 @@ interface DropzoneIndicatorProps {
   isDragging: boolean;
 }
 
-export default function DropzoneIndicator({ isDragging }: DropzoneIndicatorProps) {
+export 預設 function DropzoneIndicator({ isDragging }: DropzoneIndicatorProps) {
   return (
     <div className={cx(
       "dropzone-overlay",
@@ -14,7 +14,7 @@ export default function DropzoneIndicator({ isDragging }: DropzoneIndicatorProps
       <div className="dropzone-overlay__glow">
         <div className="dropzone-overlay__content">
           <FileUp size={64} className="dropzone-overlay__icon" />
-          <p className="dropzone-overlay__text">Drop .rtpack file to install</p>
+          <p className="dropzone-overlay__text">Drop .rtpack file to 安裝</p>
         </div>
       </div>
     </div>

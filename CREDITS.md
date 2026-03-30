@@ -131,7 +131,7 @@
 ***
 ***
 
-## Contributions to the Installer
+## Contributions to the 安裝程式
 #### NotJohnnyTamale (Lead Dev)
 - Discord: @notjohnnytamale
 - GitHub: https://github.com/ABUCKY0

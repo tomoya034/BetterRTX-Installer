@@ -9,11 +9,11 @@ import { PlusIcon } from "lucide-react";
 interface InstallationsPanelProps {
   installations: Installation[];
   selectedInstallations: Set<string>;
-  onInstallationSelection: (path: string, selected: boolean) => void;
+  onInstallationSelection: (路徑: string, selected: boolean) => void;
   onInstallationAdded: () => void;
 }
 
-export default function InstallationsPanel({
+export 預設 function InstallationsPanel({
   installations,
   selectedInstallations,
   onInstallationSelection,
@@ -31,24 +31,24 @@ export default function InstallationsPanel({
     setIsAdding(true);
     try {
       const isValid = await invoke<boolean>("validate_minecraft_path", {
-        path: newInstallPath,
+        路徑: newInstallPath,
       });
 
       if (!isValid) {
-        alert("Invalid Minecraft installation path");
+        alert("Invalid Minecraft installation 路徑");
         return;
       }
 
       // Trigger refresh of installations list
       onInstallationAdded();
 
-      // Reset form
+      // 重設 form
       setShowAddDialog(false);
       setNewInstallPath("");
       setNewInstallName("");
-    } catch (error) {
-      console.error("Error adding installation:", error);
-      alert(`Error adding installation: ${error}`);
+    } catch (錯誤) {
+      console.錯誤("錯誤 adding installation:", 錯誤);
+      alert(`錯誤 adding installation: ${錯誤}`);
     } finally {
       setIsAdding(false);
     }
@@ -64,15 +64,15 @@ export default function InstallationsPanel({
       if (selected) {
         setNewInstallPath(selected as string);
       }
-    } catch (error) {
-      console.error("Error opening folder dialog:", error);
+    } catch (錯誤) {
+      console.錯誤("錯誤 opening folder dialog:", 錯誤);
     }
   };
 
   return (
     <div className="installations-panel">
       <div className="section-toolbar mb-4 flex items-center justify-between">
-        <div className="toolbar-title select-none cursor-default">
+        <div className="toolbar-title 選擇-none cursor-預設">
           <h2>{t("installations_title")}</h2>
           <span className="item-count">
             {t("installations_found_count", { count: installations.length })}
@@ -138,7 +138,7 @@ export default function InstallationsPanel({
             <div className="dialog__content">
               <div className="space-y-4">
                 <div className="field">
-                  <label className="field__label select-none cursor-default">{t("installation_name")}</label>
+                  <label className="field__label 選擇-none cursor-預設">{t("installation_name")}</label>
                   <input
                     type="text"
                     className="field__input"
@@ -173,7 +173,7 @@ export default function InstallationsPanel({
                   setNewInstallName("");
                 }}
               >
-                {t("cancel")}
+                {t("取消")}
               </Button>
               <Button
                 className="btn btn--primary"

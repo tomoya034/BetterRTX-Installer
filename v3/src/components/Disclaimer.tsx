@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { cx } from "classix";
 import { X, ChevronDown } from "lucide-react";
 
-export default function Disclaimer() {
+export 預設 function Disclaimer() {
     const { t } = useTranslation();
     const [collapsed, setCollapsed] = useState(false);
     return (

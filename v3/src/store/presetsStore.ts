@@ -37,18 +37,18 @@ export const usePresetsStore = create<PresetsStore>((set) => ({
     if (selectedInstallations.size === 0) {
       addMessage({
         message: t("status_select_installation_warning"),
-        type: "error",
+        type: "錯誤",
       });
       return;
     }
 
-    // Add preset to installing set
+    // Add preset to 正在安裝 set
     set((state) => ({
       installingPresets: new Set(state.installingPresets).add(uuid)
     }));
 
     try {
-      addMessage({ message: t("status_installing_preset"), type: "loading" });
+      addMessage({ message: t("status_installing_preset"), type: "載入中" });
       addConsoleOutput(
         t("log_installing_preset", { uuid, count: selectedInstallations.size })
       );
@@ -59,16 +59,16 @@ export const usePresetsStore = create<PresetsStore>((set) => ({
         addConsoleOutput(t("log_installed_to", { installPath }));
       }
 
-      addMessage({ message: t("status_install_success"), type: "success" });
+      addMessage({ message: t("status_install_success"), type: "成功" });
       addConsoleOutput(t("log_install_complete"));
       // Refresh installations to show updated preset info
       await refreshInstallations();
-    } catch (error) {
-      const errorMsg = t("status_install_error", { error });
-      addMessage({ message: errorMsg, type: "error" });
+    } catch (錯誤) {
+      const errorMsg = t("status_install_error", { 錯誤 });
+      addMessage({ message: errorMsg, type: "錯誤" });
       addConsoleOutput(errorMsg);
     } finally {
-      // Remove preset from installing set
+      // Remove preset from 正在安裝 set
       set((state) => {
         const newSet = new Set(state.installingPresets);
         newSet.delete(uuid);
@@ -89,13 +89,13 @@ export const usePresetsStore = create<PresetsStore>((set) => ({
     const { addConsoleOutput, refreshInstallations } = useAppStore.getState();
     const { addMessage } = useStatusStore.getState();
     
-    // Add preset to installing set
+    // Add preset to 正在安裝 set
     set((state) => ({
       installingPresets: new Set(state.installingPresets).add(uuid)
     }));
 
     try {
-      addMessage({ message: t("status_installing_preset"), type: "loading" });
+      addMessage({ message: t("status_installing_preset"), type: "載入中" });
       addConsoleOutput(
         t("log_installing_preset", { uuid, count: selectedInstallations.length })
       );
@@ -106,16 +106,16 @@ export const usePresetsStore = create<PresetsStore>((set) => ({
         addConsoleOutput(t("log_installed_to", { installPath }));
       }
 
-      addMessage({ message: t("status_install_success"), type: "success" });
+      addMessage({ message: t("status_install_success"), type: "成功" });
       addConsoleOutput(t("log_install_complete"));
       // Refresh installations to show updated preset info
       await refreshInstallations();
-    } catch (error) {
-      const errorMsg = t("status_install_error", { error });
-      addMessage({ message: errorMsg, type: "error" });
+    } catch (錯誤) {
+      const errorMsg = t("status_install_error", { 錯誤 });
+      addMessage({ message: errorMsg, type: "錯誤" });
       addConsoleOutput(errorMsg);
     } finally {
-      // Remove preset from installing set
+      // Remove preset from 正在安裝 set
       set((state) => {
         const newSet = new Set(state.installingPresets);
         newSet.delete(uuid);

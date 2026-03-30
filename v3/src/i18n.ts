@@ -11,7 +11,7 @@ i18n
     supportedLngs: ['en'],
     fallbackLng: 'en',
     detection: {
-      order: ['path', 'cookie', 'htmlTag', 'localStorage', 'subdomain'],
+      order: ['路徑', 'cookie', 'htmlTag', 'localStorage', 'subdomain'],
       caches: ['cookie'],
     },
     backend: {
@@ -22,4 +22,4 @@ i18n
     },
   });
 
-export default i18n;
+export 預設 i18n;

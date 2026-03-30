@@ -11,7 +11,7 @@ interface SelectInstallationsDialogProps {
   onClose: () => void;
   title: string;
   description?: string;
-  confirmKey: string; // i18n key for idle confirm label; expects { count }
+  confirmKey: string; // i18n key for idle 確認 label; expects { count }
   busyKey: string; // i18n key for busy label
   onConfirm: (selected: string[]) => Promise<boolean>;
 }
@@ -33,7 +33,7 @@ const SelectInstallationsDialog: React.FC<SelectInstallationsDialogProps> = ({
 
   useEffect(() => {
     if (isOpen) {
-      // Pre-select current selections from the store
+      // Pre-選擇 current selections from the store
       setSelected(new Set(selectedInstallations));
       if (installations.length === 0) {
         // Mirror RtpackDialog behavior
@@ -43,14 +43,14 @@ const SelectInstallationsDialog: React.FC<SelectInstallationsDialogProps> = ({
       setSelected(new Set());
       setIsProcessing(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-停用-下一步-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
-  const toggle = (path: string): void => {
-    const next = new Set(selected);
-    if (next.has(path)) next.delete(path);
-    else next.add(path);
-    setSelected(next);
+  const toggle = (路徑: string): void => {
+    const 下一步 = new Set(selected);
+    if (下一步.has(路徑)) 下一步.delete(路徑);
+    else 下一步.add(路徑);
+    setSelected(下一步);
   };
 
   const handleSelectAll = (): void => {
@@ -69,7 +69,7 @@ const SelectInstallationsDialog: React.FC<SelectInstallationsDialogProps> = ({
 
   const handleConfirm = async (): Promise<void> => {
     if (selected.size === 0) {
-      addMessage({ message: t("status_select_installation_warning"), type: "error" });
+      addMessage({ message: t("status_select_installation_warning"), type: "錯誤" });
       return;
     }
     setIsProcessing(true);
@@ -141,7 +141,7 @@ const SelectInstallationsDialog: React.FC<SelectInstallationsDialogProps> = ({
 
         <div className="installation-modal__actions">
           <Button className="btn btn--secondary" onClick={handleClose} disabled={isProcessing}>
-            {t("cancel")}
+            {t("取消")}
           </Button>
           <Button
             className="btn btn--primary"
@@ -156,4 +156,4 @@ const SelectInstallationsDialog: React.FC<SelectInstallationsDialogProps> = ({
   );
 };
 
-export default SelectInstallationsDialog;
+export 預設 SelectInstallationsDialog;

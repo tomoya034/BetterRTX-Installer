@@ -8,7 +8,7 @@ import { useStatusStore } from "../../store/statusStore";
 import InstallationInstanceModal from "../installations/InstallationInstanceModal";
 import CreatorNameModal from "./CreatorNameModal";
 
-export default function CreatorTab() {
+export 預設 function CreatorTab() {
   const { t } = useTranslation();
   const { installations } = useAppStore();
   const { addMessage } = useStatusStore();
@@ -34,12 +34,12 @@ export default function CreatorTab() {
     if (selectedNames.length === 0) {
       addMessage({
         message: t("status_select_installation_warning"),
-        type: "error",
+        type: "錯誤",
       });
       return;
     }
 
-    const defaultName = `Settings ${settingsHash.slice(0, 8)}`;
+    const defaultName = `設定 ${settingsHash.slice(0, 8)}`;
     setPendingInstallData({ selectedNames, presetName: defaultName });
     setIsModalOpen(false);
     setIsNameModalOpen(true);
@@ -55,7 +55,7 @@ export default function CreatorTab() {
     try {
       addConsoleOutput(t("log_installing_creator_preset", { name: presetName }));
       
-      // Create a unique UUID for the creator preset using settings hash
+      // Create a unique UUID for the creator preset using 設定 hash
       const creatorUuid = `creator-${settingsHash.trim()}`;
       
       await invoke("download_creator_settings", {
@@ -67,19 +67,19 @@ export default function CreatorTab() {
 
       addMessage({
         message: t("creator_install_success", { name: presetName }),
-        type: "success",
+        type: "成功",
       });
       
       addConsoleOutput(t("log_creator_install_complete"));
       // Refresh installations to show the new creator preset
       await refreshInstallations();
       setSettingsHash("");
-    } catch (error) {
+    } catch (錯誤) {
       addMessage({
-        message: t("creator_install_error", { error }),
-        type: "error",
+        message: t("creator_install_error", { 錯誤 }),
+        type: "錯誤",
       });
-      addConsoleOutput(t("log_creator_install_error", { error }));
+      addConsoleOutput(t("log_creator_install_error", { 錯誤 }));
     } finally {
       setIsProcessing(false);
       setPendingInstallData(null);
@@ -90,7 +90,7 @@ export default function CreatorTab() {
     if (selectedNames.length === 0) {
       addMessage({
         message: t("status_select_installation_warning"),
-        type: "error",
+        type: "錯誤",
       });
       return;
     }
@@ -98,7 +98,7 @@ export default function CreatorTab() {
     if (uploadedFiles.length === 0) {
       addMessage({
         message: t("creator_no_materials_uploaded"),
-        type: "error",
+        type: "錯誤",
       });
       return;
     }
@@ -126,7 +126,7 @@ export default function CreatorTab() {
 
       addMessage({
         message: t("creator_materials_install_success", { name: presetName }),
-        type: "success",
+        type: "成功",
       });
       
       addConsoleOutput(t("log_material_install_complete"));
@@ -134,12 +134,12 @@ export default function CreatorTab() {
       await refreshInstallations();
       // Clear uploaded files after successful installation
       setUploadedFiles([]);
-    } catch (error) {
+    } catch (錯誤) {
       addMessage({
-        message: t("creator_materials_install_error", { error }),
-        type: "error",
+        message: t("creator_materials_install_error", { 錯誤 }),
+        type: "錯誤",
       });
-      addConsoleOutput(t("log_material_install_error", { error }));
+      addConsoleOutput(t("log_material_install_error", { 錯誤 }));
     } finally {
       setIsProcessing(false);
       setPendingMaterialData(null);
@@ -152,7 +152,7 @@ export default function CreatorTab() {
     if (!settingsHash.trim()) {
       addMessage({
         message: t("creator_please_enter_hash"),
-        type: "error",
+        type: "錯誤",
       });
       return;
     }
@@ -167,9 +167,9 @@ export default function CreatorTab() {
   const handleFileUpload = async () => {
     setIsProcessing(true);
     try {
-      // Use Tauri dialog plugin to select multiple files
+      // Use Tauri dialog plugin to 選擇 multiple files
       const filePaths = await open({
-        title: "Select .material.bin files",
+        title: "選擇 .material.bin files",
         filters: [{
           name: "Material Files",
           extensions: ["material.bin"]
@@ -191,13 +191,13 @@ export default function CreatorTab() {
             sourcePath: filePath
           }) as string;
           uploadedFilenames.push(filename);
-        } catch (error) {
+        } catch (錯誤) {
           addMessage({
             message: t("creator_upload_error_single", { 
               filename: filePath.split(/[\\\/]/).pop() || filePath,
-              error 
+              錯誤 
             }),
-            type: "error",
+            type: "錯誤",
           });
         }
       }
@@ -205,17 +205,17 @@ export default function CreatorTab() {
       if (uploadedFilenames.length > 0) {
         addMessage({
           message: t("creator_files_uploaded", { count: uploadedFilenames.length }),
-          type: "success",
+          type: "成功",
         });
 
         // Add to uploaded files list
         setUploadedFiles(prev => [...prev, ...uploadedFilenames]);
       }
       
-    } catch (error) {
+    } catch (錯誤) {
       addMessage({
-        message: t("creator_upload_error", { error }),
-        type: "error",
+        message: t("creator_upload_error", { 錯誤 }),
+        type: "錯誤",
       });
     } finally {
       setIsProcessing(false);
@@ -233,9 +233,9 @@ export default function CreatorTab() {
   const handleRtpackUpload = async () => {
     setIsProcessing(true);
     try {
-      // Use Tauri dialog plugin to select .rtpack file
+      // Use Tauri dialog plugin to 選擇 .rtpack file
       const filePath = await open({
-        title: "Select .rtpack file",
+        title: "選擇 .rtpack file",
         filters: [{
           name: "RTX Pack Files",
           extensions: ["rtpack"]
@@ -248,21 +248,21 @@ export default function CreatorTab() {
         return;
       }
 
-      // Store the selected rtpack path
+      // Store the selected rtpack 路徑
       setSelectedRtpack(filePath);
       
       addMessage({
         message: t("creator_rtpack_selected", { filename: filePath.split(/[\\\/]/).pop() || filePath }),
-        type: "success",
+        type: "成功",
       });
 
       // Immediately open the installation modal
       setIsRtpackModalOpen(true);
       
-    } catch (error) {
+    } catch (錯誤) {
       addMessage({
-        message: t("creator_rtpack_error", { error }),
-        type: "error",
+        message: t("creator_rtpack_error", { 錯誤 }),
+        type: "錯誤",
       });
     } finally {
       setIsProcessing(false);
@@ -273,7 +273,7 @@ export default function CreatorTab() {
     if (selectedNames.length === 0) {
       addMessage({
         message: t("status_select_installation_warning"),
-        type: "error",
+        type: "錯誤",
       });
       return;
     }
@@ -281,7 +281,7 @@ export default function CreatorTab() {
     if (!selectedRtpack) {
       addMessage({
         message: t("creator_no_rtpack_selected"),
-        type: "error",
+        type: "錯誤",
       });
       return;
     }
@@ -301,7 +301,7 @@ export default function CreatorTab() {
 
       addMessage({
         message: t("creator_rtpack_install_success", { name: filename }),
-        type: "success",
+        type: "成功",
       });
       
       addConsoleOutput(t("log_rtpack_install_complete"));
@@ -309,12 +309,12 @@ export default function CreatorTab() {
       await refreshInstallations();
       // Clear selected rtpack after successful installation
       setSelectedRtpack("");
-    } catch (error) {
+    } catch (錯誤) {
       addMessage({
-        message: t("creator_rtpack_install_error", { error }),
-        type: "error",
+        message: t("creator_rtpack_install_error", { 錯誤 }),
+        type: "錯誤",
       });
-      addConsoleOutput(t("log_rtpack_install_error", { error }));
+      addConsoleOutput(t("log_rtpack_install_error", { 錯誤 }));
     } finally {
       setIsProcessing(false);
     }
@@ -341,12 +341,12 @@ export default function CreatorTab() {
           <div className="panel__body">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="field">
-                <label className="field__label" htmlFor="settings-hash">
+                <label className="field__label" htmlFor="設定-hash">
                   {t("creator_settings_hash")}
                 </label>
                 <div className="field__control">
                   <input
-                    id="settings-hash"
+                    id="設定-hash"
                     type="text"
                     className="field__input font-mono"
                     placeholder={t("creator_settings_hash_placeholder")}
@@ -483,7 +483,7 @@ export default function CreatorTab() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         installations={installations}
-        presetName={`settings ${settingsHash.slice(0, 8)}...`}
+        presetName={`設定 ${settingsHash.slice(0, 8)}...`}
         onInstall={handleInstall}
         isInstalling={isProcessing}
       />

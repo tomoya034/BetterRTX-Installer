@@ -1,6 +1,6 @@
 import cx from "classix";
 
-export default function Button({
+export 預設 function Button({
   children,
   theme = null,
   size = null,

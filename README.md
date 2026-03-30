@@ -1,29 +1,29 @@
-# Better RTX Installer
+# Better RTX 安裝程式
 
 ### Prerequisites
 
 - Use software like
-  [MCLauncher](https://github.com/MCMrARM/mc-w10-version-launcher) or
+  [MCLauncher](https://github.com/MCMrARM/mc-w10-版本-launcher) or
   [Bedrock Launcher](https://github.com/BedrockLauncher/BedrockLauncher) to
   easily create a side-loaded Minecraft installation.
-- **OR** download [IOBit Unlocker](https://www.iobit.com/en/iobit-unlocker.php)
+- **OR** 下載 [IOBit Unlocker](https://www.iobit.com/en/iobit-unlocker.php)
   to allow copying to Minecraft Launcher/Windows Store installations.
 
-## Launch Installer GUI
-Copy and paste the following line into a command terminal to start the installer. _(English version)_
+## Launch 安裝程式 GUI
+Copy and paste the following line into a command terminal to start the 安裝程式. _(English 版本)_
 
 ```
-powershell -c "iwr https://bedrock.graphics/installer -useb | iex"
+powershell -c "iwr https://bedrock.graphics/安裝程式 -useb | iex"
 ```
 
 ## Translations
 
-With help from several [contributors](https://github.com/BetterRTX/BetterRTX-Installer/graphs/contributors), the installer interface has been translated into [multiple languages](https://github.com/BetterRTX/BetterRTX-Installer/tree/prerelease/v2/Localized).
+With help from several [contributors](https://github.com/BetterRTX/BetterRTX-安裝程式/graphs/contributors), the 安裝程式 interface has been translated into [multiple languages](https://github.com/BetterRTX/BetterRTX-安裝程式/tree/prerelease/v2/Localized).
 
-Enter this command in a __64-bit PowerShell__ terminal to launch the installer in your preferred language (if available).
+Enter this command in a __64-bit PowerShell__ terminal to launch the 安裝程式 in your preferred language (if available).
 
 ```powershell
-iwr https://bedrock.graphics/installer/v2/$PsUICulture | iex
+iwr https://bedrock.graphics/安裝程式/v2/$PsUICulture | iex
 ```
 
 ---
@@ -35,10 +35,10 @@ iwr https://bedrock.graphics/installer/v2/$PsUICulture | iex
 Join the
 [Minecraft RTX Discord](https://discord.com/invite/minecraft-rtx)
 or
-[open an Issue on GitHub](https://github.com/BetterRTX/BetterRTX-Installer/issues)
+[open an Issue on GitHub](https://github.com/BetterRTX/BetterRTX-安裝程式/issues)
 for additional help.
 
-[Read the Wiki](https://github.com/BetterRTX/BetterRTX-Installer/wiki) for more details and instructions.
+[Read the Wiki](https://github.com/BetterRTX/BetterRTX-安裝程式/wiki) for more details and instructions.
 
 ---
 

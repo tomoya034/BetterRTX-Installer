@@ -27,4 +27,4 @@ const SecondaryToolbar: React.FC<SecondaryToolbarProps> = ({
   );
 };
 
-export default SecondaryToolbar;
+export 預設 SecondaryToolbar;

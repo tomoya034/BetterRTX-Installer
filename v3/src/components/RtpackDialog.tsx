@@ -44,29 +44,29 @@ export const RtpackDialog: React.FC<RtpackDialogProps> = ({
 
   const handleInstall = useCallback(async (): Promise<void> => {
     if (!rtpackPath.toLowerCase().endsWith(".rtpack")) {
-      addMessage({ message: t("invalid_rtpack", "Invalid RTpack file"), type: "error" });
+      addMessage({ message: t("invalid_rtpack", "Invalid RTpack file"), type: "錯誤" });
       return;
     }
     if (selectedInstallations.size === 0) {
       addMessage({
         message: t("status_select_installation_warning"),
-        type: "error",
+        type: "錯誤",
       });
       return;
     }
     setIsInstalling(true);
     try {
-      addMessage({ message: t("status_installing_rtpack"), type: "loading" });
+      addMessage({ message: t("status_installing_rtpack"), type: "載入中" });
       await invoke<void>("install_from_rtpack", {
         rtpackPath,
         selectedNames: Array.from(selectedInstallations),
       });
-      addMessage({ message: t("status_install_success"), type: "success" });
+      addMessage({ message: t("status_install_success"), type: "成功" });
       await refreshInstallations();
       onClose();
-    } catch (error) {
-      const errorMsg = t("status_install_error", { error });
-      addMessage({ message: errorMsg, type: "error" });
+    } catch (錯誤) {
+      const errorMsg = t("status_install_error", { 錯誤 });
+      addMessage({ message: errorMsg, type: "錯誤" });
     } finally {
       setIsInstalling(false);
     }
@@ -183,7 +183,7 @@ export const RtpackDialog: React.FC<RtpackDialogProps> = ({
             onClick={handleClose}
             disabled={isInstalling}
           >
-            {t("cancel")}
+            {t("取消")}
           </Button>
           <Button
             className="btn btn--primary"
@@ -191,7 +191,7 @@ export const RtpackDialog: React.FC<RtpackDialogProps> = ({
             disabled={selectedInstallations.size === 0 || isInstalling}
           >
             {isInstalling
-              ? t("installing")
+              ? t("正在安裝")
               : t("install_to_selected", { count: selectedInstallations.size })}
           </Button>
         </div>

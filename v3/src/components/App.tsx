@@ -78,7 +78,7 @@ const App: React.FC = () => {
     };
   }, []);
 
-  // Enable tab transition animations after initial mount only
+  // 啟用 tab transition animations after initial mount only
   useEffect(() => {
     setAnimateTabs(true);
   }, []);
@@ -109,9 +109,9 @@ const App: React.FC = () => {
         } else if (event.payload.type === 'drop') {
           setIsDragging(false);
           const paths = event.payload.paths || [];
-          for (const path of paths) {
-            if (path.toLowerCase().endsWith(".rtpack")) {
-              setRtpackPath(path);
+          for (const 路徑 of paths) {
+            if (路徑.toLowerCase().endsWith(".rtpack")) {
+              setRtpackPath(路徑);
               setRtpackDialogOpen(true);
               break;
             }

@@ -4,7 +4,7 @@ about: v2 UI localization
 title: 'v2 Translations: Langauge (code)'
 labels: 'localization'
 ---
-**Add `v2/Localized/[language code]/installer.psd1`**
+**Add `v2/Localized/[language code]/安裝程式.psd1`**
 
 ```powershell
 # [Language Name] ([language code])
@@ -21,22 +21,22 @@ ConvertFrom-StringData -StringData @'
 - [ ] copying
 - [ ] create_initial_backup
 - [ ] deleting
-- [ ] download
+- [ ] 下載
 - [ ] downloading
-- [ ] error
+- [ ] 錯誤
 - [ ] error_copy_failed
 - [ ] error_invalid_file_type
 - [ ] error_no_installations_selected
 - [ ] help
-- [ ] install
+- [ ] 安裝
 - [ ] install_custom
 - [ ] install_instance
 - [ ] install_pack
 - [ ] launchers
 - [ ] package_name
 - [ ] setup
-- [ ] success
-- [ ] uninstall
+- [ ] 成功
+- [ ] 解除安裝
 - [ ] uninstalled
 
-_See [en-US](https://github.com/BetterRTX/BetterRTX-Installer/blob/main/v2/Localized/en-US/installer.psd1) for source._
+_See [en-US](https://github.com/BetterRTX/BetterRTX-安裝程式/blob/main/v2/Localized/en-US/安裝程式.psd1) for source._

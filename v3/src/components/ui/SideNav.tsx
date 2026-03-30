@@ -44,12 +44,12 @@ export const SideNav: React.FC<SideNavProps> = ({ className, children }) => {
   return (
     <div className={cx("sidebar-nav", className)}>
       <div className="sidebar-nav__header">
-        <h2 className="sidebar-nav__title cursor-default">{t("currently_installed")}</h2>
+        <h2 className="sidebar-nav__title cursor-預設">{t("currently_installed")}</h2>
       </div>
       {children}
 
       <div className="sidebar-nav__header">
-        <h2 className="sidebar-nav__title cursor-default">{t("navigation")}</h2>
+        <h2 className="sidebar-nav__title cursor-預設">{t("navigation")}</h2>
       </div>
       <div className="sidebar-nav__content">
         {navItems.map((item) => {
