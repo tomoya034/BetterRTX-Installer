@@ -42,8 +42,8 @@ interface AppState {
   addConsoleOutput: (message: string) => void;
   clearConsole: () => void;
   addInstallation: (installation: Installation) => void;
-  removeInstallation: (path: string) => void;
-  setIobitPath: (path: string | null) => void;
+  removeInstallation: (路徑: string) => void;
+  setIobitPath: (路徑: string | null) => void;
 
   // Async actions
   refreshInstallations: () => Promise<void>;
@@ -92,10 +92,10 @@ export const useAppStore = create<AppState>((set, get) => ({
     }));
   },
 
-  removeInstallation: (path) => {
+  removeInstallation: (路徑) => {
     set((state) => ({
-      installations: state.installations.filter(inst => inst.InstallLocation !== path),
-      selectedInstallations: new Set([...state.selectedInstallations].filter(p => p !== path))
+      installations: state.installations.filter(inst => inst.InstallLocation !== 路徑),
+      selectedInstallations: new Set([...state.selectedInstallations].filter(p => p !== 路徑))
     }));
   },
 
@@ -109,8 +109,8 @@ export const useAppStore = create<AppState>((set, get) => ({
       const data = await invoke<Installation[]>('list_installations');
       setInstallations(data);
       addConsoleOutput(`Found ${data.length} installations`);
-    } catch (error) {
-      const errorMsg = `Error loading installations: ${error}`;
+    } catch (錯誤) {
+      const errorMsg = `錯誤 載入中 installations: ${錯誤}`;
       addConsoleOutput(errorMsg);
     }
   },
@@ -124,8 +124,8 @@ export const useAppStore = create<AppState>((set, get) => ({
       const data = await invoke<PackInfo[]>('list_presets', { forceRefresh });
       setPresets(data);
       addConsoleOutput(`Loaded ${data.length} presets`);
-    } catch (error) {
-      const errorMsg = `Error loading presets: ${error}`;
+    } catch (錯誤) {
+      const errorMsg = `錯誤 載入中 presets: ${錯誤}`;
       addConsoleOutput(errorMsg);
     }
   },
@@ -137,8 +137,8 @@ export const useAppStore = create<AppState>((set, get) => ({
       addConsoleOutput('Clearing cache...');
       await invoke('clear_cache');
       addConsoleOutput('Cache cleared successfully');
-    } catch (error) {
-      const errorMsg = `Error clearing cache: ${error}`;
+    } catch (錯誤) {
+      const errorMsg = `錯誤 clearing cache: ${錯誤}`;
       addConsoleOutput(errorMsg);
     }
   },
@@ -146,11 +146,11 @@ export const useAppStore = create<AppState>((set, get) => ({
   installRTX: async (installPath) => {
     const { addConsoleOutput } = get();
     try {
-      addConsoleOutput(`Installing RTX DLSS to ${installPath}...`);
+      addConsoleOutput(`正在安裝 RTX DLSS to ${installPath}...`);
       await invoke('install_dlss_for_selected', { selectedNames: [installPath] });
       addConsoleOutput('RTX DLSS installed successfully');
-    } catch (error) {
-      const errorMsg = `Error installing RTX DLSS: ${error}`;
+    } catch (錯誤) {
+      const errorMsg = `錯誤 正在安裝 RTX DLSS: ${錯誤}`;
       addConsoleOutput(errorMsg);
     }
   },
@@ -161,8 +161,8 @@ export const useAppStore = create<AppState>((set, get) => ({
       addConsoleOutput(`Updating options for ${installPath}...`);
       await invoke('update_options_for_selected', { selectedNames: [installPath] });
       addConsoleOutput('Options updated successfully');
-    } catch (error) {
-      const errorMsg = `Error updating options: ${error}`;
+    } catch (錯誤) {
+      const errorMsg = `錯誤 updating options: ${錯誤}`;
       addConsoleOutput(errorMsg);
     }
   },
@@ -173,8 +173,8 @@ export const useAppStore = create<AppState>((set, get) => ({
       addConsoleOutput(`Creating backup for ${installPath}...`);
       const backupDir = await invoke('backup_selected', { destDir: 'C:\\Users\\Public\\Documents', selectedNames: [installPath] });
       addConsoleOutput(`Backup created successfully: ${backupDir}`);
-    } catch (error) {
-      const errorMsg = `Error creating backup: ${error}`;
+    } catch (錯誤) {
+      const errorMsg = `錯誤 creating backup: ${錯誤}`;
       addConsoleOutput(errorMsg);
     }
   },
@@ -185,10 +185,10 @@ export const useAppStore = create<AppState>((set, get) => ({
       addConsoleOutput(`Uninstalling RTX from ${installPaths.length} installation(s)...`);
       await invoke('uninstall_rtx', { selectedNames: installPaths });
       addConsoleOutput('RTX uninstalled successfully');
-    } catch (error) {
-      const errorMsg = `Error uninstalling RTX: ${error}`;
+    } catch (錯誤) {
+      const errorMsg = `錯誤 uninstalling RTX: ${錯誤}`;
       addConsoleOutput(errorMsg);
-      throw error;
+      throw 錯誤;
     }
   },
 
@@ -204,9 +204,9 @@ export const useAppStore = create<AppState>((set, get) => ({
       } else {
         setIobitPath(null);
       }
-    } catch (error) {
+    } catch (錯誤) {
       setIobitPath(null);
-      addConsoleOutput(`IObit Unlocker not found: ${error}`);
+      addConsoleOutput(`IObit Unlocker not found: ${錯誤}`);
     }
   },
 
@@ -216,12 +216,12 @@ export const useAppStore = create<AppState>((set, get) => ({
     try {
       const selectedPath = await invoke<string | null>('open_iobit_file_dialog');
       if (selectedPath) {
-        const result = await invoke<string>('set_iobit_path', { path: selectedPath });
+        const result = await invoke<string>('set_iobit_path', { 路徑: selectedPath });
         setIobitPath(selectedPath);
         addConsoleOutput(result);
       }
-    } catch (error) {
-      const errorMsg = `Error setting IObit path: ${error}`;
+    } catch (錯誤) {
+      const errorMsg = `錯誤 setting IObit 路徑: ${錯誤}`;
       addConsoleOutput(errorMsg);
     }
   },

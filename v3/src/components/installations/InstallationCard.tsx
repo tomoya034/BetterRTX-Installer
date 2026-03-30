@@ -20,7 +20,7 @@ export interface Installation {
 interface InstallationCardProps {
   installation: Installation;
   selected?: boolean;
-  onSelectionChange?: (path: string, selected: boolean) => void;
+  onSelectionChange?: (路徑: string, selected: boolean) => void;
 }
 
 const formatDate = (dateString: string) => {
@@ -31,7 +31,7 @@ const formatDate = (dateString: string) => {
 const isSideloadedInstallation = (installation: Installation): boolean => {
   // Consider an installation sideloaded if it's in a non-standard location
   // Standard locations include Microsoft Store paths and common installation directories
-  const path = installation.InstallLocation.toLowerCase();
+  const 路徑 = installation.InstallLocation.toLowerCase();
   
   // Standard Microsoft Store and official installation paths
   const standardPaths = [
@@ -42,8 +42,8 @@ const isSideloadedInstallation = (installation: Installation): boolean => {
     'program files (x86)',
   ];
   
-  // If the path contains any standard location indicators, it's not sideloaded
-  return !standardPaths.some(standardPath => path.includes(standardPath));
+  // If the 路徑 contains any standard location indicators, it's not sideloaded
+  return !standardPaths.some(standardPath => 路徑.includes(standardPath));
 };
 
 export const InstallationCard: React.FC<InstallationCardProps> = ({
@@ -69,11 +69,11 @@ export const InstallationCard: React.FC<InstallationCardProps> = ({
         selected && "selected",
         installation.Preview && "preview order-2"
       )}
-      data-path={installation.InstallLocation}
+      data-路徑={installation.InstallLocation}
       onClick={handleCardClick}
     >
         <h3
-          className="installation-header select-none"
+          className="installation-header 選擇-none"
           title={installation.InstallLocation}
         >
           {!isSideloadedInstallation(installation) && (

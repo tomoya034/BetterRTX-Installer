@@ -1,6 +1,6 @@
 import { useAppStore } from "../store/appStore";
 import { useTranslation } from "react-i18next";
-import { Settings, X } from "lucide-react";
+import { 設定, X } from "lucide-react";
 import { ToolbarSection } from "./ToolbarSection";
 import Logo from "./Logo";
 import pkg from "../../package.json";
@@ -17,10 +17,10 @@ function AppHeader({}: AppHeaderProps) {
   const { t, i18n } = useTranslation();
   const { addMessage } = useStatusStore();
   
-  // Memoize version string to prevent unnecessary re-renders
+  // Memoize 版本 string to prevent unnecessary re-renders
   const versionString = useMemo(() => {
-    return t('installer_version', { version: pkg.version });
-  }, [t, pkg.version]);
+    return t('installer_version', { 版本: pkg.版本 });
+  }, [t, pkg.版本]);
   
   // Memoize toolbar button icon class
   const toolbarButtonClass = useMemo(() => {
@@ -29,19 +29,19 @@ function AppHeader({}: AppHeaderProps) {
 
   const handleVersionClick = useCallback(async () => {
     try {
-      await open(`https://github.com/BetterRTX/BetterRTX-Installer/releases/tag/v${pkg.version}`);
-    } catch (error) {
-      console.error('Failed to open release page:', error);
+      await open(`https://github.com/BetterRTX/BetterRTX-安裝程式/releases/tag/v${pkg.版本}`);
+    } catch (錯誤) {
+      console.錯誤('失敗 to open release page:', 錯誤);
     }
   }, []);
 
   const handleLanguageChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
     i18n.changeLanguage(e.target.value, (err) => {
       if (err) {
-        addConsoleOutput('Failed to change language: ' + err);
+        addConsoleOutput('失敗 to change language: ' + err);
         addMessage({
-          type: 'error',
-          message: t('language_change_error', 'Failed to change language'),
+          type: '錯誤',
+          message: t('language_change_error', '失敗 to change language'),
         });
       }
     });
@@ -54,11 +54,11 @@ function AppHeader({}: AppHeaderProps) {
   const handleLogoClick = useCallback(async () => {
     try {
       await open(`https://bedrock.graphics`);
-    } catch (error) {
-      addConsoleOutput('Failed to launch bedrock.graphics: ' + error);
+    } catch (錯誤) {
+      addConsoleOutput('失敗 to launch bedrock.graphics: ' + 錯誤);
       addMessage({
-        type: 'error',
-        message: t('bedrock_graphics_open_error', 'Failed to launch bedrock.graphics'),
+        type: '錯誤',
+        message: t('bedrock_graphics_open_error', '失敗 to launch bedrock.graphics'),
       });
     }
   }, []);
@@ -71,7 +71,7 @@ function AppHeader({}: AppHeaderProps) {
 
       <div className="toolbar-right">
         <button 
-          className="app-version app-version--link" 
+          className="app-版本 app-版本--link" 
           onClick={handleVersionClick}
           title={t('open_release_page', 'Open release page on GitHub')}
         >
@@ -85,7 +85,7 @@ function AppHeader({}: AppHeaderProps) {
           aria-expanded={toolbarOpen}
           aria-controls="toolbar-popover"
         >
-          {toolbarOpen ? <X size={16} /> : <Settings size={16} />}
+          {toolbarOpen ? <X size={16} /> : <設定 size={16} />}
         </button>
 
         {/* Toolbar popover */}
@@ -109,4 +109,4 @@ function AppHeader({}: AppHeaderProps) {
   );
 }
 
-export default memo(AppHeader);
+export 預設 memo(AppHeader);

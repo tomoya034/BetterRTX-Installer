@@ -139,7 +139,7 @@ const InstallationInstanceModal: React.FC<InstallationInstanceModalProps> = ({
             onClick={handleClose}
             disabled={isInstalling}
           >
-            {t("cancel")}
+            {t("取消")}
           </Button>
           <Button
             className="btn btn--primary"
@@ -147,7 +147,7 @@ const InstallationInstanceModal: React.FC<InstallationInstanceModalProps> = ({
             disabled={selectedInstallations.size === 0 || isInstalling}
           >
             {isInstalling
-              ? t("installing")
+              ? t("正在安裝")
               : t("install_to_selected", { count: selectedInstallations.size })}
           </Button>
         </div>
@@ -156,4 +156,4 @@ const InstallationInstanceModal: React.FC<InstallationInstanceModalProps> = ({
   );
 };
 
-export default InstallationInstanceModal;
+export 預設 InstallationInstanceModal;

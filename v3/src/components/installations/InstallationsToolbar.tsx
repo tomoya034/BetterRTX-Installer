@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useAppStore } from "../../store/appStore";
 import { InstallationCard } from "./InstallationCard";
 
-export default function InstallationsToolbar() {
+export 預設 function InstallationsToolbar() {
   const { t } = useTranslation();
   const { installations } = useAppStore();
 

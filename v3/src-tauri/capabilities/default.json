@@ -1,18 +1,18 @@
 {
   "$schema": "../gen/schemas/desktop-schema.json",
-  "identifier": "default",
+  "identifier": "預設",
   "description": "Capability for the main window",
   "windows": [
     "main"
   ],
   "permissions": [
-    "core:default",
+    "core:預設",
     "core:event:allow-listen",
     "core:event:allow-emit",
-    "dialog:default",
-    "fs:default",
-    "upload:default",
-    "opener:default",
+    "dialog:預設",
+    "fs:預設",
+    "upload:預設",
+    "opener:預設",
     "shell:allow-execute",
     "shell:allow-open"
   ]

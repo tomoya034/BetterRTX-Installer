@@ -13,9 +13,9 @@ function LanguageSelector({
   translatorDebugLabel 
 }: LanguageSelectorProps) {
   return (
-    <div className="language-select">
-      <select 
-        id="language-select"
+    <div className="language-選擇">
+      <選擇 
+        id="language-選擇"
         value={currentLanguage}
         onChange={onLanguageChange}
       >
@@ -28,10 +28,10 @@ function LanguageSelector({
         <option value="ru">Русский</option>
         <option value="zh">中文</option> */}
         <option value="cimode">{translatorDebugLabel}</option>
-      </select>
+      </選擇>
       <Globe className="language-menu-icon" size={16} />
     </div>
   );
 }
 
-export default memo(LanguageSelector);
+export 預設 memo(LanguageSelector);

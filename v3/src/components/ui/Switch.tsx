@@ -8,7 +8,7 @@ interface SwitchProps {
   id?: string;
 }
 
-export default function Switch({
+export 預設 function Switch({
   checked,
   onCheckedChange,
   label,

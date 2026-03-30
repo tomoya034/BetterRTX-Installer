@@ -3,7 +3,7 @@ import { useAppStore } from "../../store/appStore";
 import InstallationsPanel from "./InstallationsPanel";
 import IoBitPanel from "./IoBitPanel";
 
-export default function InstallationsTab() {
+export 預設 function InstallationsTab() {
   const {
     installations,
     selectedInstallations,
@@ -12,12 +12,12 @@ export default function InstallationsTab() {
   } = useAppStore();
 
   const handleInstallationSelection = useCallback(
-    (path: string, selected: boolean): void => {
+    (路徑: string, selected: boolean): void => {
       const newSet = new Set(selectedInstallations);
       if (selected) {
-        newSet.add(path);
+        newSet.add(路徑);
       } else {
-        newSet.delete(path);
+        newSet.delete(路徑);
       }
       setSelectedInstallations(newSet);
     },

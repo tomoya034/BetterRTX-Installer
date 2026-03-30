@@ -8,9 +8,9 @@ import SelectInstallationsDialog from "../SelectInstallationsDialog";
 import { CheckCircle } from "lucide-react";
 import { OptionsDialog } from "../OptionsDialog";
 
-type ModalType = "dlss" | "update" | "backup" | "uninstall";
+type ModalType = "dlss" | "更新" | "backup" | "解除安裝";
 
-export default function ActionsTab() {
+export 預設 function ActionsTab() {
   const { t } = useTranslation();
   const { addMessage } = useStatusStore();
   const {
@@ -43,29 +43,29 @@ export default function ActionsTab() {
     try {
       switch (actionType) {
         case "dlss":
-          await Promise.all(paths.map(path => installRTX(path)));
-          addMessage({ message: t("actions.dlss.success"), type: "success" });
+          await Promise.all(paths.map(路徑 => installRTX(路徑)));
+          addMessage({ message: t("actions.dlss.成功"), type: "成功" });
           break;
-        case "update":
-          await Promise.all(paths.map(path => updateOptions(path)));
-          addMessage({ message: t("actions.update.success"), type: "success" });
+        case "更新":
+          await Promise.all(paths.map(路徑 => updateOptions(路徑)));
+          addMessage({ message: t("actions.更新.成功"), type: "成功" });
           break;
         case "backup":
-          await Promise.all(paths.map(path => backupSupportFiles(path)));
-          addMessage({ message: t("actions.backup.success"), type: "success" });
+          await Promise.all(paths.map(路徑 => backupSupportFiles(路徑)));
+          addMessage({ message: t("actions.backup.成功"), type: "成功" });
           break;
-        case "uninstall":
+        case "解除安裝":
           await uninstallRTX(paths);
-          addMessage({ message: t("actions.uninstall.success"), type: "success" });
+          addMessage({ message: t("actions.解除安裝.成功"), type: "成功" });
           break;
       }
       return true;
-    } catch (error) {
+    } catch (錯誤) {
       addMessage({ 
-        message: t(`actions.${actionType}.error`, {
-          error: error instanceof Error ? error.message : String(error),
+        message: t(`actions.${actionType}.錯誤`, {
+          錯誤: 錯誤 instanceof 錯誤 ? 錯誤.message : String(錯誤),
         }),
-        type: "error" 
+        type: "錯誤" 
       });
       return false;
     }
@@ -75,8 +75,8 @@ export default function ActionsTab() {
     try {
       const registered = await invoke<boolean>("is_brtx_protocol_registered");
       setIsProtocolRegistered(registered);
-    } catch (error) {
-      console.error("Failed to check protocol status:", error);
+    } catch (錯誤) {
+      console.錯誤("失敗 to check protocol 狀態:", 錯誤);
     }
   };
 
@@ -87,12 +87,12 @@ export default function ActionsTab() {
         setIsProtocolRegistered(true);
         addMessage({
           message: t("status_register_protocol_success"),
-          type: "success",
+          type: "成功",
         });
-      } catch (error) {
+      } catch (錯誤) {
         addMessage({
-          message: t("status_register_protocol_error", { error: String(error) }),
-          type: "error",
+          message: t("status_register_protocol_error", { 錯誤: String(錯誤) }),
+          type: "錯誤",
         });
       }
     }
@@ -106,16 +106,16 @@ export default function ActionsTab() {
   return (
     <section className="actions-container">
       <div className="section-toolbar mb-4">
-        <h2 className="text-lg font-semibold select-none cursor-default">{t("actions_title")}</h2>
+        <h2 className="text-lg font-semibold 選擇-none cursor-預設">{t("actions_title")}</h2>
       </div>
       <div className="actions-grid flex flex-col">
         <div className="action-btn p-4 rounded-lg border bg-app-panel border-app-border w-full">
           <div className="flex items-center justify-between w-full">
             <div className="flex flex-col flex-grow-1 w-full">
-              <h3 className="font-semibold mb-2 select-none cursor-default">
+              <h3 className="font-semibold mb-2 選擇-none cursor-預設">
                 {t("action_install_dlss_title")}
               </h3>
-              <p className="text-sm opacity-75 select-none cursor-default">{t("action_install_dlss_desc")}</p>
+              <p className="text-sm opacity-75 選擇-none cursor-預設">{t("action_install_dlss_desc")}</p>
             </div>
             <div className="ml-4">
               <Button
@@ -123,7 +123,7 @@ export default function ActionsTab() {
                 size="md"
                 onClick={() => openSelectDialog("dlss")}
               >
-                {t("install")}
+                {t("安裝")}
               </Button>
             </div>
           </div>
@@ -131,11 +131,11 @@ export default function ActionsTab() {
         <div className="action-btn p-4 rounded-lg border bg-app-panel border-app-border w-full">
           <div className="flex items-center justify-between w-full">
             <div className="flex flex-col flex-grow-1 w-full">
-              <h3 className="font-semibold mb-2 select-none cursor-default">
+              <h3 className="font-semibold mb-2 選擇-none cursor-預設">
                 {t("action_graphics_options_title", "Graphics Options Editor")}
               </h3>
-              <p className="text-sm opacity-75 select-none cursor-default">
-                {t("action_graphics_options_desc", "Edit Minecraft graphics settings directly from options.txt")}
+              <p className="text-sm opacity-75 選擇-none cursor-預設">
+                {t("action_graphics_options_desc", "Edit Minecraft graphics 設定 directly from options.txt")}
               </p>
             </div>
             <div className="ml-4">
@@ -153,8 +153,8 @@ export default function ActionsTab() {
         <div className="action-btn p-4 rounded-lg border bg-app-panel border-app-border w-full">
           <div className="flex items-center justify-between w-full">
             <div className="flex flex-col flex-grow-1 w-full">
-              <h3 className="font-semibold mb-2 select-none cursor-default">{t("action_backup_title")}</h3>
-              <p className="text-sm opacity-75 select-none cursor-default">{t("action_backup_desc")}</p>
+              <h3 className="font-semibold mb-2 選擇-none cursor-預設">{t("action_backup_title")}</h3>
+              <p className="text-sm opacity-75 選擇-none cursor-預設">{t("action_backup_desc")}</p>
             </div>
             <div className="ml-4">
               <Button
@@ -170,16 +170,16 @@ export default function ActionsTab() {
         <div className="action-btn p-4 rounded-lg border bg-app-panel border-app-border w-full">
           <div className="flex items-center justify-between w-full">
             <div className="flex flex-col flex-grow-1 w-full">
-              <h3 className="font-semibold mb-2 select-none cursor-default">{t("action_uninstall_title")}</h3>
-              <p className="text-sm opacity-75 select-none cursor-default">{t("action_uninstall_desc")}</p>
+              <h3 className="font-semibold mb-2 選擇-none cursor-預設">{t("action_uninstall_title")}</h3>
+              <p className="text-sm opacity-75 選擇-none cursor-預設">{t("action_uninstall_desc")}</p>
             </div>
             <div className="ml-4">
               <Button
                 theme="secondary"
                 size="md"
-                onClick={() => openSelectDialog("uninstall")}
+                onClick={() => openSelectDialog("解除安裝")}
               >
-                {t("uninstall")}
+                {t("解除安裝")}
               </Button>
             </div>
           </div>
@@ -187,8 +187,8 @@ export default function ActionsTab() {
         <div className="action-btn p-4 rounded-lg border bg-app-panel border-app-border w-full">
           <div className="flex items-center justify-between w-full">
             <div className="flex flex-col flex-grow-1 w-full">
-              <h3 className="font-semibold mb-2 select-none cursor-default">{t("action_register_protocol_title")}</h3>
-              <p className="text-sm opacity-75 select-none cursor-default">
+              <h3 className="font-semibold mb-2 選擇-none cursor-預設">{t("action_register_protocol_title")}</h3>
+              <p className="text-sm opacity-75 選擇-none cursor-預設">
                 {t("action_register_protocol_desc")}
               </p>
             </div>
@@ -211,42 +211,42 @@ export default function ActionsTab() {
         onClose={closeSelectDialog}
         title={
           actionType === "dlss"
-            ? t("dialog_install_dlss_title", "Install DLSS")
-            : actionType === "update"
-            ? t("dialog_update_options_title", "Update Options")
+            ? t("dialog_install_dlss_title", "安裝 DLSS")
+            : actionType === "更新"
+            ? t("dialog_update_options_title", "更新 Options")
             : actionType === "backup"
             ? t("dialog_backup_title", "Backup Selected")
-            : actionType === "uninstall"
-            ? t("dialog_uninstall_title", "Uninstall RTX")
+            : actionType === "解除安裝"
+            ? t("dialog_uninstall_title", "解除安裝 RTX")
             : ""
         }
         description={
           actionType === "dlss"
             ? t(
                 "dialog_install_dlss_desc",
-                "Select which Minecraft instances to install DLSS to"
+                "選擇 which Minecraft instances to 安裝 DLSS to"
               )
-            : actionType === "update"
+            : actionType === "更新"
             ? t(
                 "dialog_update_options_desc",
-                "Select which Minecraft instances to update options for"
+                "選擇 which Minecraft instances to 更新 options for"
               )
             : actionType === "backup"
             ? t(
                 "dialog_backup_desc",
-                "Select which Minecraft instances to back up"
+                "選擇 which Minecraft instances to 上一步 up"
               )
-            : actionType === "uninstall"
+            : actionType === "解除安裝"
             ? t(
                 "dialog_uninstall_desc",
-                "Select which Minecraft instances to restore original materials to"
+                "選擇 which Minecraft instances to 還原 original materials to"
               )
             : undefined
         }
         confirmKey={
           actionType === "dlss"
             ? "install_to_selected"
-            : actionType === "update"
+            : actionType === "更新"
             ? "update_to_selected"
             : actionType === "backup"
             ? "backup_to_selected"
@@ -254,8 +254,8 @@ export default function ActionsTab() {
         }
         busyKey={
           actionType === "dlss"
-            ? "installing"
-            : actionType === "update"
+            ? "正在安裝"
+            : actionType === "更新"
             ? "updating_options"
             : actionType === "backup"
             ? "backing_up"

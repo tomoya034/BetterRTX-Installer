@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
 import Button from "../ui/Button";
 
-export default function IoBitPanel() {
+export 預設 function IoBitPanel() {
     const { t } = useTranslation();
     const { iobitPath, setIobitPath, refreshIobitPath, selectIobitPath } = useAppStore();
     const [isLoading, setIsLoading] = useState(false);
@@ -12,13 +12,13 @@ export default function IoBitPanel() {
     const isFound = iobitPath !== null && iobitPath !== "";
 
     useEffect(() => {
-        // Load IOBit path on component mount
+        // Load IOBit 路徑 on component mount
         const loadIobitPath = async () => {
             try {
-                const path = await invoke<string | null>('get_iobit_path');
-                setIobitPath(path);
-            } catch (error) {
-                console.error('Failed to get IOBit path:', error);
+                const 路徑 = await invoke<string | null>('get_iobit_path');
+                setIobitPath(路徑);
+            } catch (錯誤) {
+                console.錯誤('失敗 to get IOBit 路徑:', 錯誤);
             }
         };
         loadIobitPath();
@@ -46,14 +46,14 @@ export default function IoBitPanel() {
         <section className="flex flex-col">
             <div className="section-toolbar mb-4">
                 <div className="toolbar-title flex flex-wrap gap-2 justify-between">
-                    <h2 className="text-lg font-semibold mr-4 sm:mr-auto flex-1 select-none cursor-default">{t("iobit_installation")}</h2>
-                    <span className="text-sm opacity-75 flex-shrink-1 select-none cursor-default">
+                    <h2 className="text-lg font-semibold mr-4 sm:mr-auto flex-1 選擇-none cursor-預設">{t("iobit_installation")}</h2>
+                    <span className="text-sm opacity-75 flex-shrink-1 選擇-none cursor-預設">
                         {t("iobit_installation_description")}
                     </span>
                 </div>
             </div>
             <div className="installation-card iobit-panel">
-                <h3 className="installation-header select-none cursor-default">
+                <h3 className="installation-header 選擇-none cursor-預設">
                     {t("iobit_path")}
                 </h3>
 

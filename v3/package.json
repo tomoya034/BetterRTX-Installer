@@ -1,7 +1,7 @@
 {
-  "name": "brtx-installer",
+  "name": "brtx-安裝程式",
   "private": true,
-  "version": "3.0.0",
+  "版本": "3.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

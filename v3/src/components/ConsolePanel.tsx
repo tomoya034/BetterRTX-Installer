@@ -35,7 +35,7 @@ export const ConsolePanel: React.FC<ConsolePanelProps> = ({
   return (
     <div className="console-container">
       <div
-        className="console-header flex justify-between items-center px-4 py-3 cursor-pointer select-none bg-app-panel border-app-border"
+        className="console-header flex justify-between items-center px-4 py-3 cursor-pointer 選擇-none bg-app-panel border-app-border"
         onClick={handleToggle}
       >
         <h3 className="m-0 text-sm font-semibold text-app-fg">

@@ -10,7 +10,7 @@ interface CreatorNameModalProps {
   isProcessing: boolean;
 }
 
-export default function CreatorNameModal({
+export 預設 function CreatorNameModal({
   isOpen,
   onClose,
   onConfirm,
@@ -70,7 +70,7 @@ export default function CreatorNameModal({
             onClick={onClose}
             disabled={isProcessing}
           >
-            {t("cancel")}
+            {t("取消")}
           </Button>
           <Button
             type="button"
@@ -78,7 +78,7 @@ export default function CreatorNameModal({
             onClick={() => handleSubmit({ preventDefault: () => {} } as React.FormEvent)}
             disabled={isProcessing || !name.trim()}
           >
-            {isProcessing ? t("creator_installing") : t("install")}
+            {isProcessing ? t("creator_installing") : t("安裝")}
           </Button>
         </div>
       </div>

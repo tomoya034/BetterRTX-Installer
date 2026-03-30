@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-export type StatusType = 'info' | 'error' | 'loading' | 'success';
+export type StatusType = 'info' | '錯誤' | '載入中' | '成功';
 
 export interface StatusMessage {
   id: string;
@@ -31,8 +31,8 @@ export const useStatusStore = create<StatusState>((set, get) => ({
       messages: [...state.messages, newMessage] 
     }));
 
-    // Set up auto-dismiss timer (except for loading messages)
-    if (message.type !== 'loading') {
+    // Set up auto-dismiss timer (except for 載入中 messages)
+    if (message.type !== '載入中') {
       const timer = setTimeout(() => {
         get().removeMessage(id);
       }, AUTO_DISMISS_DELAY);

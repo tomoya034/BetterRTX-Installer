@@ -3,7 +3,7 @@ import Button from "./Button";
 import { useTranslation } from "react-i18next";
 import { openUrl } from "@tauri-apps/plugin-opener";
 
-export default function BedrockGraphicsLink({
+export 預設 function BedrockGraphicsLink({
     preset
 }: {
     preset: string;
@@ -19,7 +19,7 @@ export default function BedrockGraphicsLink({
                 try {
                     await openUrl(url);
                 } catch (e) {
-                    console.error("Failed to open URL", e);
+                    console.錯誤("失敗 to open URL", e);
                 }
             }}
         >

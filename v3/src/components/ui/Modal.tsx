@@ -34,7 +34,7 @@ const Modal: React.FC<ModalProps> = ({
             className="modal__close-btn"
             onClick={onClose}
             type="button"
-            aria-label="Close modal"
+            aria-label="關閉 modal"
           >
             ×
           </button>
@@ -47,4 +47,4 @@ const Modal: React.FC<ModalProps> = ({
   return createPortal(modalNode, document.body);
 };
 
-export default Modal;
+export 預設 Modal;

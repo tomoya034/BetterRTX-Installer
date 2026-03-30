@@ -5,7 +5,7 @@ import PresetIcon from "../presets/PresetIcon";
 import { useAppStore } from "../../store/appStore";
 import CreatorIcon from "../creator/CreatorIcon";
 
-export default function InstallationNav() {
+export 預設 function InstallationNav() {
   const { t } = useTranslation();
   const { installations } = useAppStore();
   

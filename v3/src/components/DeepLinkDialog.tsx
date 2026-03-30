@@ -25,7 +25,7 @@ export const DeepLinkDialog: React.FC<DeepLinkDialogProps> = ({
   const { addMessage } = useStatusStore();
   const [protocolData, setProtocolData] = useState<ProtocolData | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [錯誤, setError] = useState<string | null>(null);
 
   const parseDeepLink = useCallback(async (): Promise<void> => {
     try {
@@ -49,8 +49,8 @@ export const DeepLinkDialog: React.FC<DeepLinkDialogProps> = ({
   const handleInstall = useCallback(async (): Promise<void> => {
     if (!protocolData || selectedInstallations.size === 0) {
       addMessage({
-        message: "Please select at least one installation",
-        type: "error",
+        message: "Please 選擇 at least one installation",
+        type: "錯誤",
       });
       return;
     }
@@ -64,7 +64,7 @@ export const DeepLinkDialog: React.FC<DeepLinkDialogProps> = ({
         });
         addMessage({
           message: `Successfully installed preset ${protocolData.id}`,
-          type: "success",
+          type: "成功",
         });
       } else if (protocolData.protocol_type === "creator") {
         await invoke<void>("download_creator_settings", {
@@ -72,16 +72,16 @@ export const DeepLinkDialog: React.FC<DeepLinkDialogProps> = ({
           selectedNames,
         });
         addMessage({
-          message: `Successfully installed creator settings ${protocolData.id.slice(
+          message: `Successfully installed creator 設定 ${protocolData.id.slice(
             0,
             8
           )}...`,
-          type: "success",
+          type: "成功",
         });
       }
       onClose();
     } catch (err) {
-      addMessage({ message: `Installation failed: ${err}`, type: "error" });
+      addMessage({ message: `Installation 失敗: ${err}`, type: "錯誤" });
     } finally {
       setIsProcessing(false);
     }
@@ -95,8 +95,8 @@ export const DeepLinkDialog: React.FC<DeepLinkDialogProps> = ({
         <div className="dialog__header">
           <h2 className="dialog__title">
             {protocolData?.protocol_type === "preset"
-              ? "Install Preset"
-              : "Install Creator Settings"}
+              ? "安裝 Preset"
+              : "安裝 Creator 設定"}
           </h2>
           <button
             className="dialog__close"
@@ -108,10 +108,10 @@ export const DeepLinkDialog: React.FC<DeepLinkDialogProps> = ({
         </div>
 
         <div className="dialog__content">
-          {error ? (
-            <div className="error-message">
-              <p>Error parsing deep link:</p>
-              <code>{error}</code>
+          {錯誤 ? (
+            <div className="錯誤-message">
+              <p>錯誤 parsing deep link:</p>
+              <code>{錯誤}</code>
             </div>
           ) : protocolData ? (
             <div className="space-y-4">
@@ -138,17 +138,17 @@ export const DeepLinkDialog: React.FC<DeepLinkDialogProps> = ({
                 {selectedInstallations.size === 0 ? (
                   <p className="text-sm opacity-75 italic">
                     No installations selected. Please go to the Installations
-                    tab and select target installations.
+                    tab and 選擇 target installations.
                   </p>
                 ) : (
                   <ul className="text-sm space-y-1">
-                    {Array.from(selectedInstallations).map((path) => {
+                    {Array.from(selectedInstallations).map((路徑) => {
                       const installation = installations.find(
-                        (i) => i.InstallLocation === path
+                        (i) => i.InstallLocation === 路徑
                       );
                       return (
-                        <li key={path} className="opacity-75">
-                          {installation?.FriendlyName || path}
+                        <li key={路徑} className="opacity-75">
+                          {installation?.FriendlyName || 路徑}
                         </li>
                       );
                     })}
@@ -157,7 +157,7 @@ export const DeepLinkDialog: React.FC<DeepLinkDialogProps> = ({
               </div>
             </div>
           ) : (
-            <div className="loading">
+            <div className="載入中">
               <p>Parsing deep link...</p>
             </div>
           )}
@@ -165,7 +165,7 @@ export const DeepLinkDialog: React.FC<DeepLinkDialogProps> = ({
 
         <div className="dialog__actions">
           <Button theme="secondary" onClick={onClose} disabled={isProcessing}>
-            Cancel
+            取消
           </Button>
           <Button
             theme="primary"
@@ -174,7 +174,7 @@ export const DeepLinkDialog: React.FC<DeepLinkDialogProps> = ({
               isProcessing || !protocolData || selectedInstallations.size === 0
             }
           >
-            {isProcessing ? "Installing..." : "Install"}
+            {isProcessing ? "正在安裝..." : "安裝"}
           </Button>
         </div>
       </div>

@@ -33,7 +33,7 @@ export const PresetCard: React.FC<PresetCardProps> = ({
 }) => {
   const { t } = useTranslation();
   const handleCardClick = (e: React.MouseEvent) => {
-    if ((e.target as HTMLElement).closest(".install-preset-btn")) return;
+    if ((e.target as HTMLElement).closest(".安裝-preset-btn")) return;
 
     const newSelected = !selected;
     onSelectionChange?.(preset.uuid, newSelected);
@@ -56,7 +56,7 @@ export const PresetCard: React.FC<PresetCardProps> = ({
       <div className="flex flex-col w-full">
         <PresetIcon uuid={preset.uuid} />
         <div className="preset-header cursor-pointer">
-          <h3 className="preset-title select-none">{preset.name}</h3>
+          <h3 className="preset-title 選擇-none">{preset.name}</h3>
           <button
             type="button"
             className="preset-header__toggle"
@@ -85,15 +85,15 @@ export const PresetCard: React.FC<PresetCardProps> = ({
           <dl>
             <dt>RTX Stub</dt>
             <dd>
-              <BlockPath path={preset.stub} href={preset.stub} />
+              <BlockPath 路徑={preset.stub} href={preset.stub} />
             </dd>
             <dt>Tonemapping</dt>
             <dd>
-              <BlockPath path={preset.tonemapping} href={preset.tonemapping} />
+              <BlockPath 路徑={preset.tonemapping} href={preset.tonemapping} />
             </dd>
             <dt>Bloom</dt>
             <dd>
-              <BlockPath path={preset.bloom} href={preset.bloom} />
+              <BlockPath 路徑={preset.bloom} href={preset.bloom} />
             </dd>
           </dl>
         </div>
@@ -102,12 +102,12 @@ export const PresetCard: React.FC<PresetCardProps> = ({
         <Button
           theme={!isInstalling ? "primary" : null}
           block
-          extra="install-preset-btn"
+          extra="安裝-preset-btn"
           onClick={handleInstallClick}
           disabled={isInstalling}
           data-uuid={preset.uuid}
         >
-          {isInstalling ? t("installing") : t("install")}
+          {isInstalling ? t("正在安裝") : t("安裝")}
         </Button>
       </div>
     </div>

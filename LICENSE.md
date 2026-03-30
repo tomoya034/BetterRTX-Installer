@@ -1,5 +1,5 @@
                     GNU GENERAL PUBLIC LICENSE
-                       Version 3, 29 June 2007
+                       版本 3, 29 June 2007
 
  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
@@ -16,7 +16,7 @@ the GNU General Public License is intended to guarantee your freedom to
 share and change all versions of a program--to make sure it remains free
 software for all its users.  We, the Free Software Foundation, use the
 GNU General Public License for most of our software; it applies also to
-any other work released this way by its authors.  You can apply it to
+any other work released this way by its authors.  You can 套用 it to
 your programs, too.
 
   When we speak of free software, we are referring to freedom, not
@@ -47,13 +47,13 @@ authors' sake, the GPL requires that modified versions be marked as
 changed, so that their problems will not be attributed erroneously to
 authors of previous versions.
 
-  Some devices are designed to deny users access to install or run
+  Some devices are designed to deny users access to 安裝 or run
 modified versions of the software inside them, although the manufacturer
 can do so.  This is fundamentally incompatible with the aim of
 protecting users' freedom to change the software.  The systematic
 pattern of such abuse occurs in the area of products for individuals to
 use, which is precisely where it is most unacceptable.  Therefore, we
-have designed this version of the GPL to prohibit the practice for those
+have designed this 版本 of the GPL to prohibit the practice for those
 products.  If such problems arise substantially in other domains, we
 stand ready to extend this provision to those domains in future versions
 of the GPL, as needed to protect the freedom of users.
@@ -72,9 +72,9 @@ modification follow.
 
   0. Definitions.
 
-  "This License" refers to version 3 of the GNU General Public License.
+  "This License" refers to 版本 3 of the GNU General Public License.
 
-  "Copyright" also means copyright-like laws that apply to other kinds of
+  "Copyright" also means copyright-like laws that 套用 to other kinds of
 works, such as semiconductor masks.
 
   "The Program" refers to any copyrightable work licensed under this
@@ -83,7 +83,7 @@ License.  Each licensee is addressed as "you".  "Licensees" and
 
   To "modify" a work means to copy from or adapt all or part of the work
 in a fashion requiring copyright permission, other than the making of an
-exact copy.  The resulting work is called a "modified version" of the
+exact copy.  The resulting work is called a "modified 版本" of the
 earlier work or a work "based on" the earlier work.
 
   A "covered work" means either the unmodified Program or a work based
@@ -123,7 +123,7 @@ is widely used among developers working in that language.
   The "System Libraries" of an executable work include anything, other
 than the work as a whole, that (a) is included in the normal form of
 packaging a Major Component, but which is not part of that Major
-Component, and (b) serves only to enable use of the work with that
+Component, and (b) serves only to 啟用 use of the work with that
 Major Component, or to implement a Standard Interface for which an
 implementation is available to the public in source code form.  A
 "Major Component", in this context, means a major essential component
@@ -132,7 +132,7 @@ implementation is available to the public in source code form.  A
 produce the work, or an object code interpreter used to run it.
 
   The "Corresponding Source" for a work in object code form means all
-the source code needed to generate, install, and (for an executable
+the source code needed to generate, 安裝, and (for an executable
 work) run the object code and to modify the work, including scripts to
 control those activities.  However, it does not include the work's
 System Libraries, or general-purpose tools or generally available free
@@ -198,7 +198,7 @@ technological measures.
 receive it, in any medium, provided that you conspicuously and
 appropriately publish on each copy an appropriate copyright notice;
 keep intact all notices stating that this License and any
-non-permissive terms added in accord with section 7 apply to the code;
+non-permissive terms added in accord with section 7 套用 to the code;
 keep intact all notices of the absence of any warranty; and give all
 recipients a copy of this License along with the Program.
 
@@ -221,7 +221,7 @@ terms of section 4, provided that you also meet all of these conditions:
 
     c) You must license the entire work, as a whole, under this
     License to anyone who comes into possession of a copy.  This
-    License will therefore apply, along with any applicable section 7
+    License will therefore 套用, along with any applicable section 7
     additional terms, to the whole of the work, and all its parts,
     regardless of how they are packaged.  This License gives no
     permission to license the work in any other way, but it does not
@@ -239,7 +239,7 @@ in or on a volume of a storage or distribution medium, is called an
 "aggregate" if the compilation and its resulting copyright are not
 used to limit the access or legal rights of the compilation's users
 beyond what the individual works permit.  Inclusion of a covered work
-in an aggregate does not cause this License to apply to the other
+in an aggregate does not cause this License to 套用 to the other
 parts of the aggregate.
 
   6. Conveying Non-Source Forms.
@@ -280,7 +280,7 @@ in one of these ways:
     copy the object code is a network server, the Corresponding Source
     may be on a different server (operated by you or a third party)
     that supports equivalent copying facilities, provided you maintain
-    clear directions next to the object code saying where to find the
+    clear directions 下一步 to the object code saying where to find the
     Corresponding Source.  Regardless of what server hosts the
     Corresponding Source, you remain obligated to ensure that it is
     available for as long as needed to satisfy these requirements.
@@ -300,7 +300,7 @@ or household purposes, or (2) anything designed or sold for incorporation
 into a dwelling.  In determining whether a product is a consumer product,
 doubtful cases shall be resolved in favor of coverage.  For a particular
 product received by a particular user, "normally used" refers to a
-typical or common use of that class of product, regardless of the status
+typical or common use of that class of product, regardless of the 狀態
 of the particular user or of the way in which the particular user
 actually uses, or expects or is expected to use, the product.  A product
 is a consumer product regardless of whether the product has substantial
@@ -308,9 +308,9 @@ commercial, industrial or non-consumer uses, unless such uses represent
 the only significant mode of use of the product.
 
   "Installation Information" for a User Product means any methods,
-procedures, authorization keys, or other information required to install
+procedures, authorization keys, or other information required to 安裝
 and execute modified versions of a covered work in that User Product from
-a modified version of its Corresponding Source.  The information must
+a modified 版本 of its Corresponding Source.  The information must
 suffice to ensure that the continued functioning of the modified object
 code is in no case prevented or interfered with solely because
 modification has been made.
@@ -321,8 +321,8 @@ part of a transaction in which the right of possession and use of the
 User Product is transferred to the recipient in perpetuity or for a
 fixed term (regardless of how the transaction is characterized), the
 Corresponding Source conveyed under this section must be accompanied
-by the Installation Information.  But this requirement does not apply
-if neither you nor any third party retains the ability to install
+by the Installation Information.  But this requirement does not 套用
+if neither you nor any third party retains the ability to 安裝
 modified object code on the User Product (for example, the work has
 been installed in ROM).
 
@@ -347,7 +347,7 @@ License by making exceptions from one or more of its conditions.
 Additional permissions that are applicable to the entire Program shall
 be treated as though they were included in this License, to the extent
 that they are valid under applicable law.  If additional permissions
-apply only to part of the Program, that part may be used separately
+套用 only to part of the Program, that part may be used separately
 under those permissions, but the entire Program remains governed by
 this License without regard to the additional permissions.
 
@@ -371,7 +371,7 @@ that material) supplement the terms of this License with terms:
 
     c) Prohibiting misrepresentation of the origin of that material, or
     requiring that modified versions of such material be marked in
-    reasonable ways as different from the original version; or
+    reasonable ways as different from the original 版本; or
 
     d) Limiting the use for publicity purposes of names of licensors or
     authors of the material; or
@@ -397,12 +397,12 @@ not survive such relicensing or conveying.
 
   If you add terms to a covered work in accord with this section, you
 must place, in the relevant source files, a statement of the
-additional terms that apply to those files, or a notice indicating
+additional terms that 套用 to those files, or a notice indicating
 where to find the applicable terms.
 
   Additional terms, permissive or non-permissive, may be stated in the
 form of a separately written license, or stated as exceptions;
-the above requirements apply either way.
+the above requirements 套用 either way.
 
   8. Termination.
 
@@ -472,14 +472,14 @@ sale, or importing the Program or any portion of it.
 
   A "contributor" is a copyright holder who authorizes use under this
 License of the Program or a work on which the Program is based.  The
-work thus licensed is called the contributor's "contributor version".
+work thus licensed is called the contributor's "contributor 版本".
 
   A contributor's "essential patent claims" are all patent claims
 owned or controlled by the contributor, whether already acquired or
 hereafter acquired, that would be infringed by some manner, permitted
-by this License, of making, using, or selling its contributor version,
+by this License, of making, using, or selling its contributor 版本,
 but do not include claims that would be infringed only as a
-consequence of further modification of the contributor version.  For
+consequence of further modification of the contributor 版本.  For
 purposes of this definition, "control" includes the right to grant
 patent sublicenses in a manner consistent with the requirements of
 this License.
@@ -487,7 +487,7 @@ this License.
   Each contributor grants you a non-exclusive, worldwide, royalty-free
 patent license under the contributor's essential patent claims, to
 make, use, sell, offer for sale, import and otherwise run, modify and
-propagate the contents of its contributor version.
+propagate the contents of its contributor 版本.
 
   In the following three paragraphs, a "patent license" is any express
 agreement or commitment, however denominated, not to enforce a patent
@@ -553,38 +553,38 @@ License would be to refrain entirely from conveying the Program.
 
   Notwithstanding any other provision of this License, you have
 permission to link or combine any covered work with a work licensed
-under version 3 of the GNU Affero General Public License into a single
+under 版本 3 of the GNU Affero General Public License into a single
 combined work, and to convey the resulting work.  The terms of this
-License will continue to apply to the part which is the covered work,
+License will continue to 套用 to the part which is the covered work,
 but the special requirements of the GNU Affero General Public License,
-section 13, concerning interaction through a network will apply to the
+section 13, concerning interaction through a network will 套用 to the
 combination as such.
 
   14. Revised Versions of this License.
 
   The Free Software Foundation may publish revised and/or new versions of
 the GNU General Public License from time to time.  Such new versions will
-be similar in spirit to the present version, but may differ in detail to
+be similar in spirit to the present 版本, but may differ in detail to
 address new problems or concerns.
 
-  Each version is given a distinguishing version number.  If the
-Program specifies that a certain numbered version of the GNU General
-Public License "or any later version" applies to it, you have the
+  Each 版本 is given a distinguishing 版本 number.  If the
+Program specifies that a certain numbered 版本 of the GNU General
+Public License "or any later 版本" applies to it, you have the
 option of following the terms and conditions either of that numbered
-version or of any later version published by the Free Software
-Foundation.  If the Program does not specify a version number of the
-GNU General Public License, you may choose any version ever published
+版本 or of any later 版本 published by the Free Software
+Foundation.  If the Program does not specify a 版本 number of the
+GNU General Public License, you may choose any 版本 ever published
 by the Free Software Foundation.
 
   If the Program specifies that a proxy can decide which future
 versions of the GNU General Public License can be used, that proxy's
-public statement of acceptance of a version permanently authorizes you
-to choose that version for the Program.
+public statement of acceptance of a 版本 permanently authorizes you
+to choose that 版本 for the Program.
 
   Later license versions may give you additional or different
 permissions.  However, no additional obligations are imposed on any
 author or copyright holder as a result of your choosing to follow a
-later version.
+later 版本.
 
   15. Disclaimer of Warranty.
 
@@ -613,14 +613,14 @@ SUCH DAMAGES.
 
   If the disclaimer of warranty and limitation of liability provided
 above cannot be given local legal effect according to their terms,
-reviewing courts shall apply local law that most closely approximates
+reviewing courts shall 套用 local law that most closely approximates
 an absolute waiver of all civil liability in connection with the
 Program, unless a warranty or assumption of liability accompanies a
 copy of the Program in return for a fee.
 
                      END OF TERMS AND CONDITIONS
 
-            How to Apply These Terms to Your New Programs
+            How to 套用 These Terms to Your New Programs
 
   If you develop a new program, and you want it to be of the greatest
 possible use to the public, the best way to achieve this is to make it
@@ -636,8 +636,8 @@ the "copyright" line and a pointer to where the full notice is found.
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+    the Free Software Foundation, either 版本 3 of the License, or
+    (at your option) any later 版本.
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -663,7 +663,7 @@ might be different; for a GUI interface, you would use an "about box".
 
   You should also get your employer (if you work as a programmer) or school,
 if any, to sign a "copyright disclaimer" for the program, if necessary.
-For more information on this, and how to apply and follow the GNU GPL, see
+For more information on this, and how to 套用 and follow the GNU GPL, see
 <https://www.gnu.org/licenses/>.
 
   The GNU General Public License does not permit incorporating your program

@@ -5,15 +5,15 @@ import { useStatusStore, StatusMessage } from "../store/statusStore";
 
 const StatusIcon: React.FC<{ type: StatusMessage["type"] }> = ({ type }) => {
   switch (type) {
-    case "error":
+    case "錯誤":
       return <AlertTriangle size={16} className="text-danger" />;
-    case "success":
-      return <CheckCircle size={16} className="text-success" />;
-    case "loading":
+    case "成功":
+      return <CheckCircle size={16} className="text-成功" />;
+    case "載入中":
       return (
         <div className="progress-spinner w-4 h-4 border-2 rounded-full animate-spin border-app-border border-t-brand-accent-600" />
       );
-    default:
+    預設:
       return <Info size={16} className="text-info" />;
   }
 };
@@ -39,7 +39,7 @@ const StatusToast: React.FC<{
   return (
     <div
       className={cx(
-        "status-alert bg-app-panel border-app-border transition-all duration-200 ease-in-out transform",
+        "狀態-alert bg-app-panel border-app-border transition-all duration-200 ease-in-out transform",
         isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
       )}
       role="alert"
@@ -47,7 +47,7 @@ const StatusToast: React.FC<{
       onMouseLeave={() => onMouseLeave(message.id)}
     >
       <StatusIcon type={message.type} />
-      <span className="status-message flex-1 text-sm text-app-fg">
+      <span className="狀態-message flex-1 text-sm text-app-fg">
         {message.message}
       </span>
       <button
@@ -70,7 +70,7 @@ export const StatusBarContainer: React.FC = () => {
 
   const handleMouseLeave = (id: string): void => {
     const message = messages.find((msg) => msg.id === id);
-    if (message && message.type !== "loading") {
+    if (message && message.type !== "載入中") {
       setTimeout(() => {
         removeMessage(id);
       }, 5000);

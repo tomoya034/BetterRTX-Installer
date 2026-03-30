@@ -50,7 +50,7 @@ const OPTION_METADATA: Record<string, { label?: string; min?: number; max?: numb
   'graphics_mode': { label: 'Graphics Quality', min: 0, max: 2, step: 1, description: '0=Fast, 1=Fancy, 2=Fabulous' },
   'graphics_mode_switch': { label: 'Graphics Mode Toggle', description: 'Allow switching graphics modes' },
   
-  // Display Settings
+  // Display 設定
   'gfx_fullscreen': { label: 'Fullscreen Mode', description: 'Run game in fullscreen' },
   'gfx_vsync': { label: 'Vertical Sync', description: 'Sync framerate with monitor refresh rate' },
   'gfx_max_framerate': { label: 'Max FPS Limit', min: 0, max: 240, step: 10, description: 'Maximum frames per second (0=Unlimited)' },
@@ -62,7 +62,7 @@ const OPTION_METADATA: Record<string, { label?: string; min?: number; max?: numb
   'gfx_guiscale_offset': { label: 'GUI Scale', min: -10, max: 10, step: 1, description: 'Interface size adjustment' },
   'gfx_splitscreen_guiscale_offset': { label: 'Split-Screen GUI Scale', min: -10, max: 10, step: 1, description: 'GUI scale for split-screen mode' },
   'gfx_gui_accessibility_scaling': { label: 'Accessibility GUI Scale', min: 0, max: 5, step: 1, description: 'Additional GUI scaling for accessibility' },
-  'show_advanced_video_settings': { label: 'Advanced Video Settings', description: 'Show advanced graphics options in menu' },
+  'show_advanced_video_settings': { label: 'Advanced Video 設定', description: 'Show advanced graphics options in menu' },
   
   // Visual Effects
   'gfx_viewbobbing': { label: 'View Bobbing', description: 'Camera sway when walking' },
@@ -77,7 +77,7 @@ const OPTION_METADATA: Record<string, { label?: string; min?: number; max?: numb
   'upscaling_percentage': { label: 'Resolution Scale', min: 50, max: 100, step: 5, description: 'Internal render resolution percentage' },
   'upscaling_mode': { label: 'Upscaling Method', min: 0, max: 3, step: 1, description: '0=None, 1=FSR2, 2=Other methods' },
   
-  // Additional settings that might appear
+  // Additional 設定 that might appear
   'gfx_better_grass': { label: 'Better Grass', description: 'Improved grass block sides' },
   'gfx_clouds': { label: 'Clouds', description: 'Render clouds in sky' },
   'gfx_stars': { label: 'Stars', description: 'Show stars at night' },
@@ -87,12 +87,12 @@ const OPTION_METADATA: Record<string, { label?: string; min?: number; max?: numb
 
 export const OptionsDialog: React.FC<OptionsDialogProps> = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
-  const [loading, setLoading] = useState(false);
+  const [載入中, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [instances, setInstances] = useState<MinecraftOptions[]>([]);
   const [selectedInstance, setSelectedInstance] = useState<number>(0);
   const [modifiedOptions, setModifiedOptions] = useState<Record<string, string>>({});
-  const [error, setError] = useState<string | null>(null);
+  const [錯誤, setError] = useState<string | null>(null);
   const [filterText, setFilterText] = useState('');
 
   // Load options when dialog opens
@@ -113,7 +113,7 @@ export const OptionsDialog: React.FC<OptionsDialogProps> = ({ isOpen, onClose })
       }
     } catch (err) {
       setError(err as string);
-      console.error('Failed to load options:', err);
+      console.錯誤('失敗 to load options:', err);
     } finally {
       setLoading(false);
     }
@@ -147,10 +147,10 @@ export const OptionsDialog: React.FC<OptionsDialogProps> = ({ isOpen, onClose })
         gfxOptions: modifiedOptions
       });
       
-      // Reload to confirm changes
+      // Reload to 確認 changes
       await loadOptions();
       
-      // Show success feedback
+      // Show 成功 feedback
       const successMsg = document.createElement('div');
       successMsg.className = 'fixed bottom-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-50';
       successMsg.textContent = 'Options saved successfully!';
@@ -158,7 +158,7 @@ export const OptionsDialog: React.FC<OptionsDialogProps> = ({ isOpen, onClose })
       setTimeout(() => successMsg.remove(), 3000);
     } catch (err) {
       setError(err as string);
-      console.error('Failed to save options:', err);
+      console.錯誤('失敗 to save options:', err);
     } finally {
       setSaving(false);
     }
@@ -225,7 +225,7 @@ export const OptionsDialog: React.FC<OptionsDialogProps> = ({ isOpen, onClose })
           <button
             className="dialog__close"
             onClick={onClose}
-            aria-label={t('common.close', 'Close')}
+            aria-label={t('common.關閉', '關閉')}
           >
             <X className="w-5 h-5" />
           </button>
@@ -233,20 +233,20 @@ export const OptionsDialog: React.FC<OptionsDialogProps> = ({ isOpen, onClose })
 
         {/* Content */}
         <div className="dialog__content">
-          {loading ? (
+          {載入中 ? (
             <div className="flex items-center justify-center py-8">
               <Loader2 className="w-8 h-8 animate-spin text-app-muted" />
             </div>
-          ) : error ? (
-            <div className="error-message">
-              <p>{error}</p>
+          ) : 錯誤 ? (
+            <div className="錯誤-message">
+              <p>{錯誤}</p>
               <Button onClick={loadOptions} theme="secondary" size="sm">
                 <RefreshCw className="w-4 h-4 mr-2" />
                 {t('common.retry', 'Retry')}
               </Button>
             </div>
           ) : instances.length === 0 ? (
-            <div className="error-message bg-yellow-600/10 border-yellow-600">
+            <div className="錯誤-message bg-yellow-600/10 border-yellow-600">
               <div className="flex items-center gap-2">
                 <AlertTriangle className="w-5 h-5 text-yellow-600" />
                 <p className="text-yellow-600">
@@ -354,14 +354,14 @@ export const OptionsDialog: React.FC<OptionsDialogProps> = ({ isOpen, onClose })
                   theme="secondary"
                   size="sm"
                   onClick={handleReset}
-                  disabled={loading || saving}
+                  disabled={載入中 || saving}
                 >
-                  {t('common.reset', 'Reset')}
+                  {t('common.重設', '重設')}
                 </Button>
                 <Button
                   theme="primary"
                   onClick={handleSave}
-                  disabled={loading || saving}
+                  disabled={載入中 || saving}
                 >
                   {saving ? (
                     <div className="flex items-center gap-2 flex-row-reverse">

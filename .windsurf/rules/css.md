@@ -5,6 +5,6 @@ globs: **/*.css,**/*.tsx
 
 # Project Code Style - CSS / Tailwind
 
-- Prefer grouping Tailwind styles into the styles.css file, using BEM and `@apply`.
+- Prefer grouping Tailwind styles into the styles.css file, using BEM and `@套用`.
 - Always use theme variables instead of adding new colors, sizes, etc.
 - Always use hover: and focus:
